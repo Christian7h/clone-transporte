@@ -19,10 +19,21 @@ const Session = defineTable({
     
   },
 });
+const CustomDataTable = defineTable({
+  columns: {
+    id: column.text({ primaryKey: true, unique: true }),
+    userId: column.text({ references: () => User.columns.id }),
+    title: column.text(),          // Título del servicio
+    description: column.text(),    // Descripción del servicio
+    icon: column.text(),           // Nombre del ícono (e.g., "bi bi-truck")
+  },
+});
+
 
 export default defineDb({
   tables: {
     User,
     Session,
+    CustomDataTable,
   },
 });

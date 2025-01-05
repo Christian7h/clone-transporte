@@ -5,19 +5,24 @@ const user = Astro.locals.user;
 ---
 
 <Layout>
-  <main class="flex flex-col items-center justify-center min-h-screen gap-4">
+  <main class="flex flex-col items-center justify-center min-h-screen gap-4 bg-black">
 	 {user ? (
-        <div class="flex flex-col items-center gap-4 bg-gray-800 p-6 rounded-lg shadow-lg text-center mb-14">
+        <div class="flex flex-col gap-4 bg-gray-800 p-6 rounded-lg shadow-lg text-center">
           <h1 class="text-2xl font-semibold text-white">
             ¡Bienvenido, {user.username}!
           </h1>
           <form method="POST" action="/api/signout" class="w-full" id="logoutForm" data-astro-reload>
             <button
-              class="w-full bg-red-600 text-white py-2 rounded-lg hover:bg-red-700 transition duration-200"
+              class="w-full bg-red-600 text-white py-2 rounded-lg hover:bg-red-700 transition duration-200 mb-4"
               type="submit"
             >
               ¡Cerrar sesión!
             </button>
+            <div class="flex flex-col items-center gap-4 bg-gray-800">
+              <a href="/dashboard" class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition duration-200 text-center">
+                Ir al Dashboard
+              </a>
+          </div>
           </form>
         </div>
       ) : (
@@ -35,5 +40,6 @@ const user = Astro.locals.user;
         </div>
       )}
       </main>
+      
 </Layout>
 
