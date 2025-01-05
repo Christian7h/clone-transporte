@@ -1,0 +1,9 @@
+---
+if (Astro.cookies.get('token')) {
+  Astro.cookies.delete('token', { path: '/' });
+}
+if (Astro.cookies.get('user')) {
+  Astro.cookies.delete('user', { path: '/' });
+}
+return Astro.redirect('/');
+---
