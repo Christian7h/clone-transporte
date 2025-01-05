@@ -1,42 +1,14 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { Image } from "astro:assets";
-import coverImage from "../assets/cover-image.jpg";
 import Servicios from "../components/Servicios.astro";
 import Footer from "../components/Footer.astro";
+import Galeria from "../components/Galeria.astro";
+import Welcome from "../components/Welcome.astro";
 ---
 
 <Layout>
-  <!-- Sección de portada -->
-  <section id="page_cover" class="px-4 pb-2 text-white relative bg-black">
-    <div class="container mx-auto">
-      <div class="flex flex-col items-center py-10 text-center text-white">
-        <div
-          class="mb-4"
-          data-aos="fade-up"
-          data-aos-anchor-placement="top-bottom"
-        >
-          <Image
-            src={coverImage}
-            class="max-h-[230px] max-w-full w-auto"
-            alt="Cover Image"
-          />
-        </div>
-        <div>
-          <a
-            href="#product_list"
-            class="btn-theme inline-block px-6 py-3 text-white bg-[#B89037] hover:bg-yellow-600 rounded-full shadow-lg"
-            data-aos="zoom-in">Contacto</a
-          >
-          <a
-            href="#view_more"
-            class="ml-3 text-white hover:underline"
-            data-aos="zoom-in">Ver Más <i class="bi-caret-down-fill"></i></a
-          >
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- Sección de Bienvenida -->
+   <Welcome/>
   <!-- Sección de Transporte de Carga -->
   <div id="view_more">
     <div class="container flex mb-3 justify-content-between"></div>
@@ -73,7 +45,10 @@ import Footer from "../components/Footer.astro";
   </div>
 
   <!-- Sección de Nuestros Servicios -->
-<Servicios />    
+  <Servicios />    
+  <Galeria/>
+ 
+
   <!-- Página de Formulario de Contacto -->
   <div class="py-3 sm:py-8">
     <!-- Centrado del formulario -->
@@ -237,4 +212,6 @@ import Footer from "../components/Footer.astro";
   </section>
 
   <Footer/>
+
 </Layout>
+

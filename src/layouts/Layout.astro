@@ -7,6 +7,12 @@
 		<meta name="generator" content={Astro.generator} />
 		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
+
+	  <!-- lightGallery JavaScript -->
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/lightgallery.min.js"></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/plugins/zoom/lg-zoom.min.js"></script>
 		<title>Template 1</title>
 	</head>
 	<body class="h-screen bg-gray-50 text-gray-800 font-sans">
@@ -17,10 +23,31 @@
 			AOS.init();
 		  </script>
 		  <a href="https://wa.me/56981497275" class="floatwapp text-black"><i class="bi-whatsapp"></i></a>
+		  <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+
+
 	</body>
 </html>
 
-<style>
+<style is:global>
+	/* Custom scrollbar styles */
+	::-webkit-scrollbar {
+		width: 12px;
+	}
+
+	::-webkit-scrollbar-track {
+		background: #000000;
+	}
+
+	::-webkit-scrollbar-thumb {
+		background-color: #ffffff;
+		border-radius: 10px;
+		border: 3px solid #000000;
+	}
+
+	::-webkit-scrollbar-thumb:hover {
+		background: #CA8A04;
+	}
 	.floatwapp {
     position: fixed;
     width: 60px;
