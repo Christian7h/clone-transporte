@@ -26,12 +26,16 @@ const bootstrapIcons = [
   'bi-cart',
   'bi-cloud',
   'bi-pencil',
+  'bi-credit-card',
+  'bi-cup',
+  'bi-envelope',
+  'bi-eye',
+  'bi-car-front',
 ];
 ---
-
-<div>
+<div class="bg-black w-full py-8 text-white">
   {user ? (
-    <div class="mt-6 px-4 lg:px-8">
+    <div class="px-4 lg:px-8 mb-8">
       <h3 class="text-xl font-semibold mb-4">Acciones Disponibles</h3>
       <form
         method="POST"
@@ -46,7 +50,7 @@ const bootstrapIcons = [
           type="text"
           id="customData"
           name="customData"
-          class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
+          class="bg-gray-900 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
           placeholder="Tipo de servicio"
           required
         />
@@ -54,7 +58,7 @@ const bootstrapIcons = [
           type="text"
           id="customTitle"
           name="customTitle"
-          class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
+          class="bg-gray-900 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
           placeholder="Titulo del servicio"
           required
         />
@@ -62,36 +66,36 @@ const bootstrapIcons = [
           type="text"
           id="customDescription"
           name="customDescription"
-          class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
+          class="bg-gray-900 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
           placeholder="Descripción del servicio"
           required
         />
-       <div class="relative">
-  <label for="customIcon" class="text-sm font-medium">Selecciona un ícono:</label>
-  <div class="custom-dropdown bg-gray-50 border border-gray-300 rounded-lg w-full">
-    <div
-      id="selectedIcon"
-      class="selected-icon flex items-center justify-between px-4 py-2 cursor-pointer"
-      onclick="toggleDropdown()"
-    >
-      <span>Seleccione un ícono</span>
-      <i class="bi bi-caret-down-fill"></i>
-    </div>
-    <ul id="iconList" class="dropdown-list hidden max-h-48 overflow-auto">
-      {bootstrapIcons.map((icon) => (
-        <li
-          data-value={icon}
-          onclick="selectIcon(event)"
-          class="dropdown-item flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer"
-        >
-          <i class={`bi ${icon} text-xl mr-2`}></i>
-          <span>{icon}</span>
-        </li>
-      ))}
-    </ul>
-  </div>
-  <input type="hidden" id="customIcon" name="customIcon" value="" required />
-</div>
+        <div class="relative">
+          <label for="customIcon" class="text-sm font-medium">Selecciona un ícono:</label>
+          <div class="custom-dropdown bg-gray-900 border border-gray-300 rounded-lg w-full">
+            <div
+              id="selectedIcon"
+              class="selected-icon flex items-center justify-between px-4 py-2 cursor-pointer"
+              onclick="toggleDropdown()"
+            >
+              <span>Seleccione un ícono</span>
+              <i class="bi bi-caret-down-fill"></i>
+            </div>
+            <ul id="iconList" class="dropdown-list hidden max-h-48 overflow-auto">
+              {bootstrapIcons.map((icon) => (
+                <li
+                  data-value={icon}
+                  onclick="selectIcon(event)"
+                  class="dropdown-item flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                >
+                  <i class={`bi ${icon} text-xl mr-2`}></i>
+                  <span>{icon}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <input type="hidden" id="customIcon" name="customIcon" value="" required />
+        </div>
         <button
           type="submit"
           class="text-white bg-pink-600 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5"
@@ -113,25 +117,25 @@ const bootstrapIcons = [
   )}
 </div>
 
-<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+<div class="bg-black max-h-screen grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
   {services.length > 0 ? (
     services.map((service) => (
-      <div class="bg-white shadow-md rounded-lg p-4" data-key={service.id}>
-            <form
-              method="POST"
-              action="/api/delete-service"
-              onsubmit="return handleDeleteService(event)"
-              class="inline"
-            >
-        <div class="items-center text-center space-y-3">
-          <i class={`bi ${service.icon} text-5xl`}></i>
-          <h5 class="text-lg font-medium">{service.title}</h5>
-          <p class="text-sm font-medium opacity-75">{service.description}</p>
+      <div class="bg-black shadow-md p-4" data-key={service.id}>
+        <form
+          method="POST"
+          action="/api/delete-service"
+          onsubmit="return handleDeleteService(event)"
+          class="inline"
+        >
+          <div class="items-center text-center space-y-3">
+            <i class={`bi ${service.icon} text-5xl text-white`}></i>
+            <h5 class="text-lg font-medium text-white">{service.title}</h5>
+            <p class="text-sm font-medium text-gray-300">{service.description}</p>
 
-          <div class="flex justify-center items-center space-x-4 mt-2">
-            <a href="/dashboard" aria-roledescription="por hacer" class="text-blue-600 hover:underline">
-              Editar
-            </a>
+            <div class="flex justify-center items-center space-x-4 mt-2">
+              <a href="/dashboard" aria-roledescription="por hacer" class="text-blue-600 hover:underline">
+                Editar
+              </a>
 
               <input type="hidden" name="serviceId" value={service.id} />
               <button
@@ -140,19 +144,16 @@ const bootstrapIcons = [
               >
                 Eliminar
               </button>
+            </div>
+            <div class="delete-message"></div>
           </div>
-          <div class="delete-message"></div>
-
         </form>
-
-        </div>
       </div>
     ))
   ) : (
-    <p>No hay servicios disponibles.</p>
+    <p class="text-white">No hay servicios disponibles.</p>
   )}
 </div>
-
 <script is:inline>
   async function handleSubmitService(event) {
     event.preventDefault();
