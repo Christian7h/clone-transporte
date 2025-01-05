@@ -39,8 +39,8 @@ export async function POST(context: APIContext): Promise<Response> {
       ])
       .execute();
 
-    return new Response("Datos enviados con éxito", { status: 200 });
-  } catch (error) {
+      return new Response(JSON.stringify({ message: 'Servicio añadido correctamente' }), { status: 200 });
+    } catch (error) {
     console.error("Error al insertar datos:", error);
     return new Response("Error al enviar los datos", { status: 500 });
   }
