@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import coverImage from "../assets/cover-image.jpg";
 import Servicios from "../components/Servicios.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <Layout>
@@ -51,7 +52,7 @@ import Servicios from "../components/Servicios.astro";
               <h2 class="mb-3 text-3xl font-bold">Transporte de Carga</h2>
               <p class="mb-3 text-lg font-semibold text-opacity-75">
                 Empresa de transporte de carga dentro y fuera del gran
-                Concepción.
+                Longaví.
               </p>
               <div class="font-medium space-y-2">
                 <p>
@@ -59,7 +60,7 @@ import Servicios from "../components/Servicios.astro";
                   hasta 26m³.
                 </p>
                 <p>
-                  Realizamos mudanzas desde o hacia la región del BíoBío,
+                  Realizamos mudanzas desde o hacia la región del Maule,
                   garantizando un servicio puntual, responsable y profesional.
                   Cotizar y agendar con anticipación.
                 </p>
@@ -201,22 +202,22 @@ import Servicios from "../components/Servicios.astro";
 	  
 	  <!-- WhatsApp -->
 	  <div class="py-6 px-4 sm:px-6 lg:px-8">
-		<a href="https://wa.me/56942313615?text=Hola,%20escribo%20desde%20transportesreyes.cl" class="text-reset">
+		<a href="https://wa.me/56981497275?text=Hola,%20escribo%20desde%20transportesreyes.cl" class="text-reset">
 		  <div class="py-6 px-5 bg-green-400 text-white rounded-lg shadow-md">
 			<h1 class="text-4xl sm:text-5xl"><i class="bi-whatsapp"></i></h1>
 			<p class="font-semibold text-lg sm:text-xl">WhatsApp</p>
-			<p class="text-sm sm:text-base">56942313615</p>
+			<p class="text-sm sm:text-base">56981497275</p>
 		  </div>
 		</a>
 	  </div>
   
 	  <!-- Email -->
 	  <div class="py-6 px-4 sm:px-6 lg:px-8">
-		<a href="mailto: contacto@transportesreyes.cl" class="text-reset">
+		<a href="mailto: contacto@example.cl" class="text-reset">
 		  <div class="py-6 px-5 bg-blue-400 text-white rounded-lg shadow-md">
 			<h1 class="text-4xl sm:text-5xl"><i class="bi-envelope"></i></h1>
 			<p class="font-semibold text-lg sm:text-xl">Email</p>
-			<p class="text-sm sm:text-base">contacto@transportesreyes.cl</p>
+			<p class="text-sm sm:text-base">contacto@example.cl</p>
 		  </div>
 		</a>
 	  </div>
@@ -227,70 +228,13 @@ import Servicios from "../components/Servicios.astro";
 		  <div class="py-6 px-5 bg-gray-400 text-white rounded-lg shadow-md">
 			<h1 class="text-4xl sm:text-5xl"><i class="bi-geo-alt"></i></h1>
 			<p class="font-semibold text-lg sm:text-xl">Dirección</p>
-			<p class="text-sm sm:text-base">Concepción, Chile</p>
+			<p class="text-sm sm:text-base">Longaví, Chile</p>
 		  </div>
 		</a>
 	  </div>
 	  
 	</div>
   </section>
-  
 
-  <footer id="page_footer" class="py-5 bg-black text-white">
-	<div class="container mx-auto px-4 sm:px-8 lg:px-24">
-	  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-		
-		<!-- Sección de texto principal -->
-		<div class="mb-3">
-		  <p class="mb-1 font-semibold text-lg sm:text-xl">Transportes Reyes</p>
-		  <p class="mb-1 text-sm sm:text-base">
-			Mudanzas en Concepción Fletes en Concepción Transporte en Concepción
-			Transporte de carga Repartos en Concepción Mudanzas Santiago
-		  </p>
-		</div>
-  
-		<!-- Sección de enlaces (vacía en este caso) -->
-		<div class="mb-3 text-right"></div>
-	  </div>
-  
-	  <!-- Lista de contacto -->
-	  <ul class="list-none list-inside text-sm flex flex-wrap gap-4 mb-4 justify-center sm:justify-start">
-		<li class="mb-3">
-		  <a class="text-white" href="https://wa.me/56942313615?text=Hola,%20escribo%20desde%20transportesreyes.cl">
-			<i class="bi-whatsapp"></i> 56942313615
-		  </a>
-		</li>
-		<li class="mb-3">
-		  <a class="text-white" href="mailto:contacto@transportesreyes.cl">
-			<i class="bi-envelope"></i> contacto@transportesreyes.cl
-		  </a>
-		</li>
-		<li class="mb-3">
-		  <a class="text-white" href="#modal_contact_address" data-bs-toggle="modal">
-			<i class="bi-geo-alt"></i> Concepción, Chile.
-		  </a>
-		</li>
-	  </ul>
-  
-	  <!-- Línea de separación -->
-	  <hr class="my-4 border-gray-600" />
-  
-	  <!-- Footer inferior -->
-	  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
-		<div class="text-center md:text-left">
-		  <span>Todos los derechos reservados</span>
-		</div>
-  
-		<div class="text-center md:text-right">
-		  <a href="https://instagram.com/transportesreyes.cl" class="text-white mx-3" target="_blank">
-			<i class="bi-instagram"></i>
-		  </a>
-		  <a href="/login/" class="text-white">
-			<i class="bi-gear-fill"></i>
-		  </a>
-		</div>
-	  </div>
-	</div>
-  </footer>
-  
+  <Footer/>
 </Layout>
