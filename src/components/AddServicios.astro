@@ -189,7 +189,7 @@ const bootstrapIcons = [
             import '/public/custom.css'
             ClassicEditor
                 .create( document.querySelector( '#customDescription' ), {
-                    licenseKey: 'eyJhbGciOiJFUzI1NiJ9.eyJleHAiOjE3Njc3NDM5OTksImp0aSI6ImIyMTQ1Yjc4LTFlNjUtNDZjNC1iZWFjLWFmYTIyZGQ5NTI4NSIsInVzYWdlRW5kcG9pbnQiOiJodHRwczovL3Byb3h5LWV2ZW50LmNrZWRpdG9yLmNvbSIsImRpc3RyaWJ1dGlvbkNoYW5uZWwiOlsiY2xvdWQiLCJkcnVwYWwiXSwiZmVhdHVyZXMiOlsiRFJVUCJdLCJ2YyI6IjlkOGJlNmEwIn0.GcPX13a_EP4bFBEsoJqdcu7NLyQNZWhivgZuabJ4Y7NbEkk3X1BRSZM9cyB371M3o6Mdahpkppq077HrELOVXw',
+                    licenseKey: 'eyJhbGciOiJFUzI1NiJ9.eyJleHAiOjE3Njc3NDM5OTksImp0aSI6IjBlZDBjOTg4LWJmM2QtNGM2NC05ZWM1LWYzNWM1MmI3ZmE3OSIsImxpY2Vuc2VkSG9zdHMiOlsiMTI3LjAuMC4xIiwibG9jYWxob3N0IiwiMTkyLjE2OC4qLioiLCIxMC4qLiouKiIsIjE3Mi4qLiouKiIsIioudGVzdCIsIioubG9jYWxob3N0IiwiKi5sb2NhbCJdLCJ1c2FnZUVuZHBvaW50IjoiaHR0cHM6Ly9wcm94eS1ldmVudC5ja2VkaXRvci5jb20iLCJkaXN0cmlidXRpb25DaGFubmVsIjpbImNsb3VkIiwiZHJ1cGFsIl0sImxpY2Vuc2VUeXBlIjoiZGV2ZWxvcG1lbnQiLCJmZWF0dXJlcyI6WyJEUlVQIl0sInZjIjoiOGNjMjMzY2UifQ._ReihK7ooewIqpjn91mZMts9eRzqOtUk8l-E3sp-AeMHAtQn_VBSVPVpMlU6qKc39m8WVs3rwjjUe_k_9rDkKw',
                     plugins: [ Essentials, Bold, Italic, Font, Paragraph, FontFamily, FontColor, FontBackgroundColor ],
                     toolbar: [
                 'undo', 'redo', '|', 'bold', 'italic', '|',
@@ -210,10 +210,10 @@ const bootstrapIcons = [
   </script>
 <style>
   /* Estilo global para el contenedor del editor */
-  #customDescription {
-      width: 100%;
-      height: auto;
-      max-width: 100%; /* Asegura que no se salga del ancho */
+  @media (max-width: 768px) {
+    #customDescription {
+      min-height: 150px; /* Puedes ajustar la altura mínima */
+    }
   }
 
   .ck-editor__editable {

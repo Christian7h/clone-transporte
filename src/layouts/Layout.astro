@@ -1,82 +1,113 @@
 ---
 const user = Astro.locals.user;
 ---
+
 <!doctype html>
 <html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css"
+    />
 
-	  <!-- lightGallery JavaScript -->
-	  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/lightgallery.min.js"></script>
-	  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script>
-	  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/plugins/zoom/lg-zoom.min.js"></script>
-	  <link rel="stylesheet" href="https://cdn.ckeditor.com/ckeditor5/44.1.0/ckeditor5.css" />
+    <!-- lightGallery JavaScript -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/lightgallery.min.js"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/plugins/thumbnail/lg-thumbnail.min.js"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/plugins/zoom/lg-zoom.min.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.ckeditor.com/ckeditor5/44.1.0/ckeditor5.css"
+    />
 
-		<title>Template 1</title>
-	</head>
-	<body class="h-screen bg-gray-50 text-gray-800 font-sans">
-		<script is:inline src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-		
-		<nav class="bg-black p-4">
-			<div class="container mx-auto flex justify-between items-center">
-			  <a href="/" class="text-white text-2xl font-bold">Template</a>
-			  <div class="flex space-x-4">
-				<a href="/" class="text-gray-300 hover:text-white">Inicio</a>
-				{user ? (
-				  <>
-					<a href="/dashboard" class="text-gray-300 hover:text-white">Dashboard</a>
-					<form method="POST" action="/api/signout" class="inline">
-					  <button type="submit" class="text-red-500 hover:text-red-400">Cerrar Sesión</button>
-					</form>
-				  </>
-				) : (
-				  <>
-					<a href="/signin" class="text-gray-300 hover:text-white">Iniciar Sesión</a>
-					<a href="/signup" class="text-gray-300 hover:text-white">Registrarse</a>
-				  </>
-				)}
-			  </div>
-			</div>
-		  </nav>
-		  
-		<slot />
-		<script>
-			//@ts-ignore
-			AOS.init();
-		  </script>
-		  <a href="https://wa.me/56981497275" class="floatwapp text-black"><i class="bi-whatsapp"></i></a>
-		  <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+    <title>Template 1</title>
+  </head>
+  <body class="h-screen bg-gray-50 text-gray-800 font-sans">
+    <script is:inline src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
+    <nav class="bg-black p-4">
+      <div class="container mx-auto flex justify-between items-center">
+        <a href="/" class="text-white text-2xl font-bold">Template</a>
+        <div class="flex space-x-4">
+          <a href="/" class="text-gray-300 hover:text-white">Inicio</a>
+          {
+            user ? (
+              <>
+                <a href="/dashboard" class="text-gray-300 hover:text-white">
+                  Dashboard
+                </a>
+                <form method="POST" action="/api/signout" class="inline">
+                  <button type="submit" class="text-red-500 hover:text-red-400">
+                    Cerrar Sesión
+                  </button>
+                </form>
+              </>
+            ) : (
+              <>
+                <a href="/signin" class="text-gray-300 hover:text-white">
+                  Iniciar Sesión
+                </a>
+                <a href="/signup" class="text-gray-300 hover:text-white">
+                  Registrarse
+                </a>
+              </>
+            )
+          }
+        </div>
+      </div>
+    </nav>
 
-	</body>
+    <slot />
+    <script>
+      //@ts-ignore
+      AOS.init();
+    </script>
+    <a href="https://wa.me/56981497275" class="floatwapp text-black"
+      ><i class="bi-whatsapp"></i></a
+    >
+    <script
+      is:inline
+      src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"
+    ></script>
+
+    
+  </body>
 </html>
 
 <style is:global>
-	/* Custom scrollbar styles */
-	::-webkit-scrollbar {
-		width: 12px;
-	}
+  /* Custom scrollbar styles */
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
 
-	::-webkit-scrollbar-track {
-		background: #000000;
-	}
+  ::-webkit-scrollbar-track {
+    background: #000000;
+  }
 
-	::-webkit-scrollbar-thumb {
-		background-color: #ffffff;
-		border-radius: 10px;
-		border: 3px solid #000000;
-	}
+  ::-webkit-scrollbar-thumb {
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: 3px solid #000000;
+  }
 
-	::-webkit-scrollbar-thumb:hover {
-		background: #CA8A04;
-	}
-	.floatwapp {
+  ::-webkit-scrollbar-thumb:hover {
+    background: #ca8a04;
+  }
+  .floatwapp {
     position: fixed;
     width: 60px;
     height: 60px;
@@ -88,11 +119,10 @@ const user = Astro.locals.user;
     font-size: 34px;
     padding-top: 5px;
     z-index: 100;
-}
+  }
 
-
-a {
+  a {
     text-decoration: none;
     opacity: 0.92;
-}
+  }
 </style>
