@@ -33,9 +33,8 @@ const services = await db
                   <i class={service.icon}></i>  <!-- Mostrar el icono del servicio -->
                 </div>
                 <h5 class="text-lg font-medium">{service.title}</h5>  <!-- Título del servicio -->
-                <p class="text-sm font-medium opacity-75">
-                  {service.description}  <!-- Descripción del servicio -->
-                </p>
+                <p class="text-sm font-medium opacity-75" set:html={service.description}></p>
+
               </div>
             </div>
           ))
