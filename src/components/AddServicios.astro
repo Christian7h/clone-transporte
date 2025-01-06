@@ -56,7 +56,7 @@ const bootstrapIcons = [
 
 ---
 <div class="bg-black w-full py-12 text-white">
-  <div class="container mx-auto px-4 max-w-screen-lg">
+  <div class="container mx-auto px-4 max-w-screen-xl">
     <h1 class="text-4xl">Dashboard Servicios</h1>
     {user ? (
       <div class="px-4 lg:px-8">
@@ -82,7 +82,7 @@ const bootstrapIcons = [
         <textarea
           id="customDescription"
           name="customDescription"
-          class="bg-gray-900 border border-gray-300 text-white sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
+          class="bg-black text-white sm:text-lg rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
           placeholder="Descripción del servicio"
           required
         ></textarea>
@@ -173,6 +173,7 @@ const bootstrapIcons = [
   </div>
   <script is:inline src="https://cdn.ckeditor.com/ckeditor5/44.1.0/ckeditor5.umd.js"></script>
 
+
   <script>
               const {
                 ClassicEditor,
@@ -186,18 +187,17 @@ const bootstrapIcons = [
                 FontBackgroundColor,
                 Link,
                 BlockQuote,
-                Alignment,
             } = CKEDITOR;
-
             ClassicEditor
                 .create( document.querySelector( '#customDescription' ), {
                     licenseKey: 'eyJhbGciOiJFUzI1NiJ9.eyJleHAiOjE3Njc3NDM5OTksImp0aSI6ImIyMTQ1Yjc4LTFlNjUtNDZjNC1iZWFjLWFmYTIyZGQ5NTI4NSIsInVzYWdlRW5kcG9pbnQiOiJodHRwczovL3Byb3h5LWV2ZW50LmNrZWRpdG9yLmNvbSIsImRpc3RyaWJ1dGlvbkNoYW5uZWwiOlsiY2xvdWQiLCJkcnVwYWwiXSwiZmVhdHVyZXMiOlsiRFJVUCJdLCJ2YyI6IjlkOGJlNmEwIn0.GcPX13a_EP4bFBEsoJqdcu7NLyQNZWhivgZuabJ4Y7NbEkk3X1BRSZM9cyB371M3o6Mdahpkppq077HrELOVXw',
-                    plugins: [ Essentials, Bold, Italic, Font, Paragraph, FontFamily, FontColor, FontBackgroundColor, Link, BlockQuote, Alignment ],
+                    plugins: [ Essentials, Bold, Italic, Font, Paragraph, FontFamily, FontColor, FontBackgroundColor ],
                     toolbar: [
                 'undo', 'redo', '|', 'bold', 'italic', '|',
-                'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor', '|', 
+                'fontSize', 'fontFamily', 'fontColor', '|', 
                 'link', 'blockQuote', 'alignment'
             ],
+            
                 } )
   .then(editor => {
     editor.model.document.on('change:data', () => {
@@ -209,7 +209,48 @@ const bootstrapIcons = [
     console.error(error);
   });
   </script>
+<style>
+  /* Estilo global para el contenedor del editor */
+  #customDescription {
+      width: 100%;
+      height: auto;
+      max-width: 100%; /* Asegura que no se salga del ancho */
+  }
 
+  .ck-editor__editable {
+      background-color: #000000; /* Fondo negro */
+      color: #ffffff; /* Texto blanco */
+      min-height: 200px; /* Mínima altura para el área editable */
+      padding: 15px;
+      width: 100%; /* Asegura que ocupe todo el ancho del contenedor */
+  }
+
+  .ck-toolbar {
+      background-color: #333333; /* Fondo oscuro para la barra de herramientas */
+      color: #ffffff; /* Texto blanco */
+      border-bottom: 1px solid #444444;
+  }
+
+  .ck-button {
+      background-color: #333333; /* Fondo oscuro de los botones */
+      color: #ffffff; /* Texto blanco */
+  }
+
+  .ck-button:hover {
+      background-color: #444444;
+  }
+
+  .ck-button:active {
+      background-color: #555555;
+  }
+
+  /* Ajuste de la barra de herramientas para pantallas más pequeñas */
+  @media (max-width: 768px) {
+      .ck-toolbar {
+          flex-wrap: auto;
+      }
+  }
+</style>
 <script is:inline>
   async function handleSubmitService(event) {
     event.preventDefault();
