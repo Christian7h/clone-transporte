@@ -15,13 +15,10 @@ export async function POST(context: APIContext): Promise<Response> {
 
   // Procesar los datos enviados desde el formulario
   const formData = await context.request.formData();
-  const customData = formData.get("customData");
   const customTitle = formData.get("customTitle");
   const customDescription = formData.get("customDescription");
   const customIcon = formData.get("customIcon");
-  if (!customData || typeof customData !== "string") {
-    return new Response("Datos inválidos", { status: 400 });
-  }
+
 
   // Inserción en la base de datos
   try {
@@ -31,7 +28,6 @@ export async function POST(context: APIContext): Promise<Response> {
         {
           id: crypto.randomUUID().toString(), // Asegurar que sea una cadena
           userId: session.user?.id, // Asegurar que userId es una cadena
-          data: customData,
           title: customTitle ? String(customTitle) : "", // Convertir a cadena
           description: customDescription ? String(customDescription) : "", // Convertir a cadena
           icon: customIcon ? String(customIcon) : "", // Convertir a cadena

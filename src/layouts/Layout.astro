@@ -1,3 +1,6 @@
+---
+const user = Astro.locals.user;
+---
 <!doctype html>
 <html lang="es">
 	<head>
@@ -17,6 +20,28 @@
 	</head>
 	<body class="h-screen bg-gray-50 text-gray-800 font-sans">
 		<script is:inline src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+		<nav class="bg-black p-4">
+			<div class="container mx-auto flex justify-between items-center">
+			  <a href="/" class="text-white text-2xl font-bold">Template</a>
+			  <div class="flex space-x-4">
+				<a href="/" class="text-gray-300 hover:text-white">Inicio</a>
+				{user ? (
+				  <>
+					<a href="/dashboard" class="text-gray-300 hover:text-white">Dashboard</a>
+					<form method="POST" action="/api/signout" class="inline">
+					  <button type="submit" class="text-red-500 hover:text-red-400">Cerrar Sesión</button>
+					</form>
+				  </>
+				) : (
+				  <>
+					<a href="/signin" class="text-gray-300 hover:text-white">Iniciar Sesión</a>
+					<a href="/signup" class="text-gray-300 hover:text-white">Registrarse</a>
+				  </>
+				)}
+			  </div>
+			</div>
+		  </nav>
+		  
 		<slot />
 		<script>
 			//@ts-ignore

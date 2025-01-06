@@ -7,7 +7,7 @@ const user = Astro.locals.user;
 <Layout>
   <main class="flex flex-col items-center justify-center min-h-screen gap-4 bg-black">
 	 {user ? (
-        <div class="flex flex-col gap-4 bg-gray-800 p-6 rounded-lg shadow-lg text-center">
+        <div class="flex flex-col gap-4 bg-black p-6 rounded-lg shadow-lg text-center">
           <h1 class="text-2xl font-semibold text-white">
             ¡Bienvenido, {user.username}!
           </h1>
@@ -27,7 +27,7 @@ const user = Astro.locals.user;
         </div>
       ) : (
         <div class="flex flex-col items-center gap-4 bg-gray-800 p-6 rounded-lg shadow-lg text-center mb-14">
-          <h1 class="text-2xl font-semibold text-white">¡Bienvenido a Valorant API!</h1>
+          <h1 class="text-2xl font-semibold text-white">¡Bienvenido Admin!</h1>
           <a href="/api/github" class="w-full bg-gray-900 text-white py-2 rounded-lg hover:bg-gray-700 transition duration-200 text-center" data-astro-reload>
             Iniciar sesión con GitHub
           </a>

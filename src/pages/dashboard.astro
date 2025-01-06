@@ -1,6 +1,12 @@
 ---
 import AaddServicios from "../components/AddServicios.astro";
 import Layout from "../layouts/Layout.astro";
+const isLogin = Astro.locals.user;
+
+if (!isLogin) {
+  // Si no está autenticado, redirigir a la página de login
+  return Astro.redirect("/login");
+}
 ---
 
 <Layout>
